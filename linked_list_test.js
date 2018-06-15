@@ -8,8 +8,6 @@ describe('linked list', () => {
     ll = new LinkedList()
 
     expect(ll.head).to.be.null
-    ll.count.should.eq(0)
-    ll.sum.should.eq(0)
   })
 
   it('appends', () => {
@@ -23,5 +21,18 @@ describe('linked list', () => {
 
     ll.append(10)
     ll.head.next_node.next_node.data.should.eq(10)
+  })
+
+  it('sums', () => {
+    ll = new LinkedList()
+
+    ll.append(12)
+    ll.sum().should.eq(12)
+
+    ll.append(1)
+    ll.sum().should.eq(13)
+
+    ll.append(10)
+    ll.sum().should.eq(23)
   })
 })
