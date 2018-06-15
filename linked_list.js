@@ -15,4 +15,14 @@ module.exports = class LinkedList {
       this.append(value, current_node)
     }
   }
+
+  sum(sum = 0, current_node = this.head) {
+    if (current_node === null) {
+      return sum
+    } else {
+      sum += current_node.data
+      current_node = current_node.next_node
+      return this.sum(sum, current_node)
+    }
+  }
 }
