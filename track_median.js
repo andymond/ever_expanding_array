@@ -6,6 +6,15 @@ module.exports = class TrackMedian {
     this.limit = limit
   }
 
+  run() {
+    let medians = []
+    for (let i = 0; i < this.limit; i++) {
+      this.append()
+      medians.push(this.findMedian())
+    }
+    return medians
+  }
+
   append() {
     let num = Math.random() * 100
     this.array.push(num)
@@ -16,6 +25,5 @@ module.exports = class TrackMedian {
   findMedian() {
     return this.sum / this.count
   }
-
 
 }
