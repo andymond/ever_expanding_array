@@ -36,7 +36,7 @@ describe('linked list', () => {
     ll.sum().should.eq(23)
   })
 
-  it('count nodes in list', () => {
+  it('counts nodes in list', () => {
     ll = new LinkedList()
 
     ll.count().should.eq(0)

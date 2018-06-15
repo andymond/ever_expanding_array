@@ -25,4 +25,20 @@ module.exports = class LinkedList {
       return this.sum(sum, current_node)
     }
   }
+
+  count() {
+    if (this.head === null) {
+      return 0
+    } else if (this.head.next_node === null) {
+      return 1
+    } else {
+      let current_node = this.head
+      let count = 1
+      while (current_node.next_node !== null) {
+        count += 1
+        current_node = current_node.next_node
+      }
+      return count
+    }
+  }
 }
