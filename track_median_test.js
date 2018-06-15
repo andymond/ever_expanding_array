@@ -38,4 +38,15 @@ describe('TrackMedian', () => {
 
     tm.findMedian().should.eq(tm.sum/tm.count)
   })
+
+  it('it returns array of medians', () => {
+    let tm = new TrackMedian(10);
+
+    let medians = tm.run()
+
+    medians.should.be.an('array')
+    medians.length.should.eq(10)
+    medians[0].should.eq(tm.array[0])
+    medians[9].should.eq(tm.sum/tm.count)
+  })
 })
