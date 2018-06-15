@@ -35,4 +35,19 @@ describe('linked list', () => {
     ll.append(10)
     ll.sum().should.eq(23)
   })
+
+  it('count nodes in list', () => {
+    ll = new LinkedList()
+
+    ll.count().should.eq(0)
+
+    ll.append(12)
+    ll.count().should.eq(1)
+
+    ll.append(1)
+    ll.count().should.eq(2)
+
+    ll.append(4)
+    ll.count().should.eq(3)
+  })
 })
