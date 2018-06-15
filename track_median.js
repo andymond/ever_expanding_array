@@ -6,13 +6,14 @@ module.exports = class TrackMedian {
     this.limit = limit
   }
 
-  run() {
-    let medians = []
-    for (let i = 0; i < this.limit; i++) {
+  run(medians = []) {
+    if (this.count === this.limit) {
+      return medians
+    } else {
       this.append()
       medians.push(this.findMedian())
+      return this.run(medians)
     }
-    return medians
   }
 
   append() {

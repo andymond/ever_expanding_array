@@ -47,6 +47,6 @@ describe('TrackMedian', () => {
     medians.should.be.an('array')
     medians.length.should.eq(10)
     medians[0].should.eq(tm.array[0])
-    medians[9].should.eq(tm.sum/tm.count)i
+    medians[9].should.eq(tm.sum/tm.count)
   })
 })
