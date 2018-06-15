@@ -19,10 +19,23 @@ describe('TrackMedian', () => {
 
     tm.array.length.should.eq(1)
     tm.array[0].should.be.a('number')
+    tm.count.should.eq(1)
+    tm.sum.should.eq(tm.array[0])
 
     tm.append()
 
     tm.array.length.should.eq(2)
     tm.array[1].should.be.a('number')
+    tm.count.should.eq(2)
+    tm.sum.should.eq(tm.array[0] + tm.array[1])
+  })
+
+  it('it finds median based on current state', () => {
+    let tm = new TrackMedian(1);
+
+    tm.append()
+    tm.append()
+
+    tm.findMedian().should.eq(tm.sum/tm.count)
   })
 })
